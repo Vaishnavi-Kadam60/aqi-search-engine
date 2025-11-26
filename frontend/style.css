@@ -1,0 +1,56 @@
+body { 
+    font-family: 'Segoe UI', sans-serif; 
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Default BG */
+    display: flex; justify-content: center; align-items: center; 
+    height: 100vh; margin: 0; transition: background 1s ease; 
+}
+
+.container { 
+    background: rgba(255, 255, 255, 0.95); 
+    padding: 2.5rem; border-radius: 16px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+    width: 380px; text-align: center; 
+    backdrop-filter: blur(5px);
+}
+
+h1 { color: #333; margin-bottom: 1.5rem; font-size: 1.8rem; }
+
+.search-box { display: flex; gap: 10px; margin-bottom: 20px; }
+input { padding: 12px; flex: 1; border: 2px solid #eee; border-radius: 8px; outline: none; transition: 0.3s; }
+input:focus { border-color: #007bff; }
+
+button { 
+    padding: 12px 20px; background: #007bff; color: white; 
+    border: none; border-radius: 8px; cursor: pointer; font-weight: bold; 
+    transition: transform 0.2s;
+}
+button:hover { background: #0056b3; transform: scale(1.05); }
+
+.hidden { display: none; }
+
+/* Result Card Animation */
+.result-card { margin-top: 25px; animation: slideUp 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
+
+.aqi-badge { 
+    width: 120px; height: 120px; border-radius: 50%; 
+    display: flex; flex-direction: column; justify-content: center; align-items: center; 
+    margin: 0 auto 15px; font-weight: 800; font-size: 2.5rem; color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: background 0.5s;
+}
+.aqi-badge .label { font-size: 0.9rem; font-weight: normal; opacity: 0.9; }
+
+.status { font-size: 1.2rem; font-weight: 600; color: #444; margin-bottom: 20px; }
+
+.details-grid { 
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; 
+    background: #f8f9fa; padding: 15px; border-radius: 12px; 
+}
+.detail-item { display: flex; flex-direction: column; gap: 5px; color: #666; font-size: 0.9rem; }
+.detail-item i { font-size: 1.2rem; color: #007bff; margin-bottom: 5px; }
+.detail-item strong { color: #333; font-size: 1.1rem; }
+
+.error { color: #d32f2f; background: #ffebee; padding: 10px; border-radius: 8px; margin-top: 15px; }
+#loader { margin-top: 20px; color: #666; font-style: italic; }
+
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }

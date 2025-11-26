@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fa-solid fa-wind"></i> Air Quality Search</h1>
+        
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter city (e.g. Mumbai, Delhi)...">
+            <button onclick="searchAQI()">Search</button>
+        </div>
+
+        <div id="loader" class="hidden">
+            <i class="fa-solid fa-circle-notch fa-spin"></i> Checking Air Quality...
+        </div>
+        
+        <div id="result" class="result-card hidden">
+            <h2 id="cityName">City Name</h2>
+            <div class="aqi-badge" id="aqiBadge">
+                <span id="aqiValue">0</span>
+                <span class="label">AQI</span>
+            </div>
+            <p id="statusText" class="status">Moderate</p>
+            
+            <div class="details-grid">
+                <div class="detail-item">
+                    <i class="fa-solid fa-lungs"></i>
+                    <span>PM 2.5</span>
+                    <strong id="pm25">-</strong>
+                </div>
+                <div class="detail-item">
+                    <i class="fa-solid fa-virus"></i>
+                    <span>PM 10</span>
+                    <strong id="pm10">-</strong>
+                </div>
+                <div class="detail-item">
+                    <i class="fa-solid fa-temperature-half"></i>
+                    <span>Temp</span>
+                    <strong id="temp">-</strong>
+                </div>
+            </div>
+        </div>
+        <p id="error" class="error hidden"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
